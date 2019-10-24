@@ -2,22 +2,22 @@ const $conteinerGrupos = document.getElementById ("conteinerGrupos");
 
 const numerosAleatorio = () => Math.trunc(Math.random() * 3)  -1;
 
-const nomes = ["cleyde","ana","maria","jose","pedro","marta", "hugo","111","2222","333","4444","5555","6666"];
+const nomes = ["Maria cleyde","ana da Silva","maria","jose","pedro","marta", "hugo","111","2222","333","4444","5555","6666"];
 
 const embaralharArray = ( arr ) => nomes.sort(numerosAleatorio);
 
 function dividirGrupos ( arr, qtd ) {
-    
+
     const arrGrupos = [];
     const max = arr.length;
-    
+
     const salto = Math.ceil (max / qtd );
     for ( i=0; i<max; i=i+salto){
         aux = arr.slice (i, i+salto).join(" - ");
         arrGrupos.push ({
-            "nome":i/salto, 
+            "nome":i/salto,
             "integrantes":aux
-        }); 
+        });
     }
     return arrGrupos;
 }
@@ -32,8 +32,8 @@ const criarCards = ( grupos ) => {
             </div>
         </div>`
     }
-    
-    
+
+
     return grupos.reduce ( criarCard , "");
  }
 
